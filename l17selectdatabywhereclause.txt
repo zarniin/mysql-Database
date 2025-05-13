@@ -1,0 +1,152 @@
+=> Select Data By Using WHERE Clause 
+
+	Syntax 
+
+		SELECT * FROM tablename 
+		WHERE condition;
+
+		SELECT column1,column2,column3 FROM tablename 
+		WHERE condition;
+
+	------------------------------------------------------------------------------------
+
+	Exercise (= / LIKE)  
+
+		SELECT * FROM persons;
+
+		SELECT * FROM persons 
+		WHERE city = "mandalay";
+
+		SELECT * FROM persons 
+		WHERE city = "Mandalay";
+
+		SELECT * FROM persons 
+		WHERE city = "MANDALAY";
+
+		SELECT firstname,lastname,city FROM persons 
+		WHERE city = "yangon";
+
+		SELECT firstname,lastname,city FROM persons 
+		WHERE city LIKE "Yangon";
+
+		SELECT firstname,lastname,city FROM persons 
+		WHERE city LIKE "YANGON";
+
+		SELECT firstname,lastname,city FROM persons 
+		WHERE city LIKE "yangon";
+
+		SELECT firstname,lastname,city FROM persons 
+		WHERE id = 5;
+
+		SELECT * FROM suppliers
+		WHERE firstname = "tin htut";
+
+		SELECT * FROM suppliers
+		WHERE firstname = "Tin Htut";
+
+		SELECT * FROM suppliers
+		WHERE firstname = "Tin Htut";
+
+		SELECT * FROM suppliers
+		WHERE firstname LIKE "tin htut";
+
+		SELECT * FROM suppliers
+		WHERE firstname LIKE "Tin Htut";
+
+		SELECT * FROM suppliers
+		WHERE firstname LIKE "Tin Htut";
+
+	-------------------------------------------------------------------------------------
+
+	Exercise (<> or !=) 
+
+		SELECT * FROM persons 
+		WHERE city != "mandalay";
+
+		SELECT * FROM persons 
+		WHERE city <> "mandalay";
+
+		SELECT * FROM persons 
+		WHERE city <> "yangon";
+
+		=> Keyword (NOT) 
+		SELECT * FROM persons 
+		WHERE NOT city = "Mandalay";
+
+		SELECT * FROM persons 
+		WHERE NOT city LIKE "Mandalay";
+
+		= / NOT (error) 
+		*ERROR 
+		SELECT * FROM persons 
+		WHERE city NOT = "Mandalay";
+
+		*ERROR 
+		SELECT * FROM persons 
+		WHERE city NOT "Mandalay";
+
+		*ERROR 
+		SELECT * FROM persons 
+		WHERE NOT city !LIKE "Mandalay";
+
+		LIKE = NOT (no error) 
+		SELECT * FROM persons 
+		WHERE city NOT LIKE "Mandalay";
+
+		SELECT * FROM persons 
+		WHERE NOT city LIKE "Mandalay";
+
+	-------------------------------------------------------------------------------------
+
+	Exercise (> (or) < (or) >= (or) <=)
+
+		SELECT firstname,lastname,age FROM enginners;
+
+		SELECT firstname,lastname,age FROM enginners
+		WHERE age = 25;
+
+		SELECT firstname,lastname,age FROM enginners
+		WHERE age = 18;
+
+		SELECT firstname,lastname,age FROM enginners
+		WHERE age < 18;
+
+		SELECT firstname,lastname,age FROM enginners
+		WHERE age <= 18;
+
+		SELECT firstname,lastname,age FROM enginners
+		WHERE age > 25;
+
+		SELECT firstname,lastname,age FROM enginners
+		WHERE age >= 25;
+
+		SELECT firstname,lastname,age FROM enginners
+		WHERE age <> 18;
+
+	-------------------------------------------------------------------------------------
+
+	Exercise 
+		Between with and 
+		(BETWEEN USE keyword(AND)
+
+			SELECT firstname,lastname,age,gender FROM enginners;
+
+			SELECT firstname,lastname,age,gender FROM enginners
+			WHERE age BETWEEN 18 AND 30;
+
+			SELECT firstname,lastname,age,gender FROM enginners
+			WHERE age BETWEEN 18 AND 30 AND gender = "male";
+
+			SELECT firstname,lastname,age,gender FROM enginners
+			WHERE gender = "male" AND age BETWEEN 18 AND 30;
+
+	-------------------------------------------------------------------------------------
+	Exercise 
+		NOT BETWEEN with AND 
+
+			SELECT firstname,lastname,age,gender FROM enginners
+			WHERE NOT age BETWEEN 18 AND 30;
+
+			SELECT firstname,lastname,age,gender FROM enginners
+			WHERE NOT age BETWEEN 18 AND 30 AND gender = "female";
+

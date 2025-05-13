@@ -1,0 +1,45 @@
+=> CONCAT 
+	
+	=> Syntax
+
+		SELECT CONCAT(columnname1,columnname2) FROM tablename;
+
+		SELECT CONCAT('Hello','World');
+		SELECT CONCAT('Hello',' ','World');
+		SELECT CONCAT('Hello','...','World');
+		SELECT CONCAT('Hello','...','World',' ',"We are welcome.");
+
+		SELECT CONCAT('Hello',12345);
+		SELECT CONCAT('Hello','12345');
+		SELECT CONCAT(10,20);
+
+		SELECT * FROM suppliers;
+
+	=> Exercise 
+
+		SELECT CONCAT(firstname,lastname) FROM suppliers;
+		SELECT CONCAT(firstname,' ',lastname) FROM suppliers;
+		SELECT CONCAT(firstname,' ',lastname) AS fullname FROM suppliers;
+		SELECT CONCAT(firstname,' ',lastname) AS fullname,phone FROM suppliers;
+
+		SELECT firstname,lastname,CONCAT(firstname,' ',lastname) AS fullname,phone FROM suppliers;
+
+		SELECT firstname AS first,lastname AS last,
+		CONCAT(firstname,' ',lastname) AS fullname,
+		phone AS phonenumber FROM suppliers;
+
+		SELECT firstname AS first,lastname AS last,
+		CONCAT(firstname,' ',lastname) AS fullname,
+		phone AS "phone number" FROM suppliers;
+
+	=>CONCAT_WS ( Concat with Separator ) 
+
+		=> Syntax 
+			SELECT CONCAT_WS('',columnname1,columnname2) FROM suppliers;
+
+			SELECT CONCAT_WS(' ',firstname,lastname) FROM suppliers;
+			SELECT CONCAT_WS('-',firstname,lastname) FROM suppliers;
+			SELECT CONCAT_WS('/',firstname,lastname,phone) FROM suppliers;
+
+
+

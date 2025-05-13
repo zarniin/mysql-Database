@@ -1,0 +1,79 @@
+=> IN / NOT IN Operator 
+	
+	=> IN 	
+
+		result = 1
+		SELECT 10 IN (10,20,30,40,50);
+
+		result = 0
+		SELECT 10 IN (100,200,300,400,500);
+
+		result = 1
+		SELECT 'aung aung' IN ('maung maung','aung aung','su su');
+		SELECT 'aung aung' IN ('maung maung','AUNG AUNG','su su'); 
+		SELECT 'aung aung' IN ('maung maung','Aung Aung','su su');
+		SELECT 'aung aung' IN ('maung maung','Aung aung','su su');
+
+		result = 0
+		SELECT 'aung' IN ('maung maung','aung aung','su su');
+
+	=> NOT IN 	
+
+		result = 0
+		SELECT 10 NOT IN (10,20,30,40,50);
+
+		result = 1
+		SELECT 10 NOT IN (100,200,300,400,500);
+
+		result = 0
+		SELECT 'aung aung' NOT IN ('maung maung','aung aung','su su');
+		SELECT 'aung aung' NOT IN ('maung maung','AUNG AUNG','su su'); 
+		SELECT 'aung aung' NOT IN ('maung maung','Aung Aung','su su');
+		SELECT 'aung aung' NOT IN ('maung maung','Aung aung','su su');
+
+		result = 1
+		SELECT 'aung' NOT IN ('maung maung','aung aung','su su');
+
+	-----------------------------------------------------------------------
+
+	EXERCISE 
+		=> IN 
+
+		SELECT * FROM customers;
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city = "mandalay";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city IN ("mandalay");
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city = "mandalay" OR city = "yangon";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city IN ('mandalay','yangon');
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city IN ('mandalay','yangon')
+		ORDER BY city ASC;
+
+	EXERCISE 
+		=> NOT IN 
+
+		SELECT * FROM customers;
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city != "mandalay";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city <> "mandalay";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city NOT IN ("mandalay");
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE city NOT IN ('mandalay','yangon');
+
+	-----------------------------------------------------------------------
+
+

@@ -1,0 +1,19 @@
+=>DATABASES (SHOW) 
+	SHOW DATABASES;
+
+=>Choose Database (USE)
+	USE test;
+
+=>Delete Database (DROP) 
+	DROP DATABASE test;
+
+=>About Database Naming 
+	
+	*CAN CREATE 
+		CREATE DATABASE bookshop;
+		CREATE DATABASE book_shop;
+		CREATE DATABASE bookShop;
+
+	*CAN'T CREATE
+		CREATE DATABASE Book Shop;
+		CREATE DATABASE Book#$Shop; 

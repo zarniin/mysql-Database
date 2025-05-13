@@ -1,0 +1,12 @@
+=>Select Data 
+	
+	=> Method 1 
+		SELECT * FROM tablename;
+
+	=> Method 2 
+		SELECT column1,column2,column3,... FROM tablename;
+
+	SELECT * FROM persons; 
+
+	SELECT firstname,lastname,city FROM persons;
+	SELECT city,firstname,lastname FROM persons;

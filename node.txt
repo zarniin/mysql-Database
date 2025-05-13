@@ -1,0 +1,47 @@
+Mysql (My Structure Query Language) 
+	Web Server 
+		(i).Database type (2 ways) (1). Table type (2). Document / Object type 
+		(ii).Database server=>string(text) (or) / File server=>source(FTP)(jpg,png,webp)/ Email server 
+		(iii).Server os (laptop web server html/css/javascript) 
+		(iv).Library(jQery/bootstrap/Font Awesome) (or) Framework(laraval/react.js/node.js)
+		(v).CrosssidePlateform(virtual server Fake) or (Thirty party) => (Linux server/web server/Mysql server / pHp MyAdmin )
+		(vi).Xampp Server port 80 / Warm Server 
+			(1).Web server = Apache / Nginx 
+			(2).Database server = MariaDB / 
+			(3).PHP = PHP / (4).Perl
+		(vii). IPS address / Domain Name 
+			(1).Website Domain Name Port = 80 / 443 
+			(2).Apache server = 80 / 443
+			(3).Mysql server = 33,06
+			(4).Remote Desktop Port / VPN Port 
+			(5). Domain Name = localhost (or) localhost:80  (or) localhost:80/phpmyadmin/
+			(6). IPS address = 127.0.0.1 (or) 127.0.0.1/phpmyadmin/ 
+		(viii). XAMPP setup 
+			(1).Private Network => (2 ways) true
+			(2).Xampp control => Compatbility => Run this program as an adminstrator => true
+		(vx). => Mysql Knowledge
+			(1).Printout (SELECT) (or) Javascript Printout (console.log())
+			(2).string+number = calculate (or) string+string = calculate
+			(3).Database => utf8mb4_unicode_ci
+
+		--------------------------------------------------------------------
+
+	L1Mysqlintro.txt
+		(1).Comment (Single Line(#,--,/**/) and Multi Line(/**/))
+		(2).Arithemethic Operator (5 types) (+,-,*,/ (or) DIV ,% (or) MOD)
+		(3).Comparsion (or) Comparasion Operator (9 types) (=,>,<,>=,<=,!= (or) <>,BETWEEN,LIKE,IN)
+		(4).CRUD 
+			(1).(C(create)=>create/table(database/table) / database/table => name change (ALTER) => delete (DROP) / 
+			(2).(R(read) => INSERT INTO (database/table) => SELECT (read) / 
+			(3).(U(update) => UPDATE / 
+			(4).(D(delete) => DELETE)
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+=> LIMIT Clause 
+
+	=>Syntax 
+
+		SELECT column1,column2,column3 FROM tablename 
+		WHERE condition 
+		LIMIT number;
+
+	--------------------------------------------------------------
+
+	Exercise 
+
+		SELECT id,firstname,lastname,age,city FROM customers 
+		LIMIT 10;
+
+		SELECT id,firstname,lastname,age,city FROM customers 
+		WHERE age > 25;
+
+		SELECT id,firstname,lastname,age,city FROM customers 
+		WHERE age > 25
+		LIMIT 3;
+
+		SELECT id,firstname,lastname,age,city FROM customers 
+		WHERE age > 25
+		ORDER By age DESC;
+
+		SELECT id,firstname,lastname,age,city FROM customers 
+		WHERE age > 25
+		ORDER By age DESC
+		LIMIT 3;

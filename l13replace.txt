@@ -1,0 +1,60 @@
+=>REPLACE 
+
+	=>Syntax
+
+		SELECT REPLACE('text','old','new');
+
+	------------------------------------------------------------
+
+	Exercise 
+
+		SELECT REPLACE('Hello World','Hell','Zer');
+
+		*no action (Case Sensitive)
+		SELECT REPLACE('Hello World','hell','Zer');
+
+		SELECT REPLACE('Hello World','o','0');
+		SELECT REPLACE('Hello World','o','*');
+		SELECT REPLACE('Hello World','l','7');
+
+		*no action (Case Sensitive)
+		SELECT REPLACE('Hello World','O','5');
+
+		SELECT REPLACE('coffee milk bread cheese',' ',' and ');
+
+	------------------------------------------------------------
+
+	Exercise 
+
+		SELECT * FROM persons;
+
+		SELECT city FROM persons;
+
+		SELECT REPLACE(city,'m','M') FROM persons;
+
+		SELECT REPLACE(city,'m','M') AS captial FROM persons;
+
+	------------------------------------------------------------
+
+	=> REPLACE() with SUBSTRING() and CONCAT() 
+
+		Exercise
+			SELECT SUBSTING(REPLACE(address,'n','N'),1,5) FROM persons;
+
+			SELECT SUBSTRING(
+			REPLACE(address,'n','N'),1,5) 
+			FROM persons;
+
+			SELECT CONCAT(SUBSTRING(REPLACE(address,'n','N'),1,5),'....') FROM persons;
+
+			SELECT CONCAT(SUBSTRING(
+			REPLACE(address,'n','N'),1,5),'....') 
+			FROM persons;
+
+			SELECT CONCAT(SUBSTRING(REPLACE(address,'n','N'),1,5),'....') AS street FROM persons;
+
+			SELECT CONCAT(SUBSTRING(
+			REPLACE(address,'n','N'),1,5),'....') AS street 
+			FROM persons;
+
+	------------------------------------------------------------

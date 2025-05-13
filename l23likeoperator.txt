@@ -1,0 +1,99 @@
+=> LIKE Operator 
+
+	=>Syntax 
+
+		SELECT column1,column2,colum3....
+		WHERE tablename 
+		WHERE column LIKE pattern;
+
+	LIKE Operators pattern 
+
+		WHERE column LIKE 'a%'			Find any values that start with 'a'
+		WHERE column LIKE '%a'			Find any values that end with 'a'
+		WHERE column LIKE '%or%'		Find any values that have 'or' in any position 
+		( or နဲ. စရမယ် စာလုံး ကြိုက်တယ် နေရာမှာ ရှိလို.ရတယ် )
+		WHERE column LIKE '_r%'		    Find any values that have 'r' in the second position
+		( r နဲ. စရမယ်  စာလုံး ဒုတိယနေရာမှာ ရှိရမယ် ) 
+		WHERE column LIKE 'r_%'		    Find any values that have 'r' and least 2 characters in length
+		( a နဲ. စရမယ် အနည်းဆုံး စာလုံး ၂ လုံးရှိရမယ် )
+		WHERE column LIKE 'r__%'		Find any values that have 'r' and least 3 characters in length
+		( a နဲ. စရမယ် အနည်းဆုံး စာလုံး ၃ လုံးရှိရမယ် )
+		WHERE column LIKE 'a%o'			Find any values that start with 'a' and ending with 'o'
+		( a နဲ. စမယ် o နဲ. ဆုံးရမယ် )
+
+	Exericse 
+
+		SELECT firstname,lastname,age,city FROM customers;
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname = "aung";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "aung";
+
+		result = no result
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname = "m%";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "m%";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "%g";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "%n";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "%un";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "%nn";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "%zaw%";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "_a%";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "a__%";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "a___%";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "a____%";
+
+		SELECT firstname,lastname,age,city FROM customers
+		WHERE firstname LIKE "a%g";
+
+	---------------------------------------------------------------------------------------------
+
+	=> EXERCISE ( LIKE '____') 
+
+		SELECT firstname,lastname,age,city FROM customers 
+		WHERE firstname LIKE '____';
+
+		SELECT firstname,lastname,age,city FROM customers 
+		WHERE firstname LIKE '_____';
+
+		SELECT firstname,lastname,age,city FROM customers 
+		WHERE firstname LIKE '______';
+
+	---------------------------------------------------------------------------------------------
+
+	=> EXERCISE ( LIKE '%' ) is anything 
+
+		SELECT firstname,lastname,age,city FROM customers 
+		WHERE firstname LIKE '%';
+
+		result = _facebook
+		SELECT firstname,lastname,age,city FROM customers 
+		WHERE firstname LIKE '\_%';
+
+		result = _face_book
+		SELECT firstname,lastname,age,city FROM customers 
+		WHERE firstname LIKE '%\_%';
+
+	---------------------------------------------------------------------------------------------

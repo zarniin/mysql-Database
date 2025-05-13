@@ -1,0 +1,114 @@
+=> PRIMARY KEY 
+
+	Method 1 
+		CREATE TABLE IF NOT EXISTS workers(
+			id INT NOT NULL PRIMARY KEY,
+			firstname VARCHAR(255),
+			lastname VARCHAR(255),
+			age INT
+		);
+
+	Method 2
+		CREATE TABLE IF NOT EXISTS workers(
+			id INT,
+			firstname VARCHAR(255),
+			lastname VARCHAR(255),
+			age INT,
+			PRIMARY KEY(id)
+		);
+
+	Method 1
+		=> Without PRIMARY KEY 
+
+			CREATE TABLE IF NOT EXISTS workers(
+				id INT,
+				firstname VARCHAR(255),
+				lastname VARCHAR(255),
+				age INT 
+			);
+
+			INSERT INTO workers(id,firstname,lastname)
+			VALUES (1,'kyaw ','kyaw'),
+				   (3,'nu','nu');
+
+		=> With PRIMARY KEY 
+
+			CREATE TABLE IF NOT EXISTS developers(
+				id INT PRIMARY KEY,
+				firstname VARCHAR(255),
+				lastname VARCHAR(255),
+				age INT 
+			);
+
+			INSERT INTO developers(id,firstname,lastname)
+			VALUES (1,'aung ','aung'),
+				   (2,'yu','yu');
+
+	--------------------------------------------------------------------
+
+	Method 2 (PRIMARY KEY =>AUTO_INCREMENT / SHOW INDEX FROM tablename / )
+
+		=> With PRIMARY KEY 
+			CREATE TABLE IF NOT EXISTS enginners(
+				id INT AUTO_INCREMENT,
+				firstname VARCHAR(255) NOT NULL,
+				lastname VARCHAR(255) NOT NULL,
+				gender VARCHAR(255) DEFAULT 'male',
+				age INT NOT NULL
+			);
+
+			DESC enginners;
+			SHOW INDEX FROM enginners;
+
+			INSERT INTO enginners(firstname,lastname,gender,age)
+			VALUE ('aye','mya',25,'female');
+
+			INSERT INTO enginners(firstname,lastname,age)
+			VALUES ('tun','tun',25),
+				   ('tar','hla',30);
+
+			INSERT INTO enginners(firstname,lastname,age)
+			VALUES ('kyaw','kyaw',25),
+				   ('aung','aung',30);
+
+	--------------------------------------------------------------------
+
+	=> ADD PRIMARY KEY 
+
+		DESC persons;
+
+	=> Method 1 
+		ALTER TABLE workers (tablename)
+		ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+	=> Method 2 
+		ALTER TABLE tablename 
+		ADD COLUMN id INT NULL AUTO_INCREMENT FIRST,
+		ADD PRIMARY KEY (id);
+
+	=> Exercise (DROP COLUMN)
+		ALTER TABLE workers 
+		DROP COLUMN id; 
+
+		SHOW INDEX FROM workers
+
+
+	--------------------------------------------------------------------
+
+	=> DROP PRIMARY KEY 
+
+		DESC workers; 
+		SHOW INDEX FROM workers;
+
+		*ERROR = we need to remove auto increment 
+		ALTER TABLE workers DROP PRIMARY KEY;
+
+		=> MODIFY 
+			ALTER TABLE workers MODIFY id INT NOT NULL; 
+			ALTER TABLE workers DROP PRIMARY KEY;
+
+			DESC workers;
+			SHOW INDEX FROM workers; 
+
+	--------------------------------------------------------------------
+

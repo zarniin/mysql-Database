@@ -1,0 +1,93 @@
+=> UNIQUE KEY 
+
+	=> Method 1 
+		ALTER TABLE users 
+		ADD UNIQUE (email);
+
+		=>Users 
+			CREATE TABLE IF NOT EXISTS users(
+				id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+				firstname VARCHAR(50) NOT NULL,
+				lastname VARCHAR(50) NOT NULL,
+				email VARCHAR(100) NOT NULL,
+				phone VARCHAR(100) NOT NULL,
+				password VARCHAR(255) NOT NULL
+			);
+
+			DESC users;
+			SHOW INDEX FROM users;
+
+			ALTER TABLE users 
+			ADD UNIQUE (email);
+
+			INSERT INTO users(firstname,lastname,email,phone,password) 
+			VALUES ('aung','aung','aungaung@gmail.com','0911111','123456'),
+					('aung','kyaw','aungkyaw@gmail.com','0922222','123456'),
+					('thura','kyaw','thuraaung@gmail.com','0933333','123456');
+
+			SHOW INDEX FROM users;
+
+			*ERROR
+			INSERT INTO users(firstname,lastname,email,phone,password) 
+			VALUES ('kyaw','kyaw','aungaung@gmail.com','0944444','123456');
+
+			*ERROR
+			INSERT INTO users(firstname,lastname,email,phone,password) 
+			VALUES ('kyaw','kyaw','AungAung@gmail.com','0944444','123456');
+
+		=>Suppliers
+
+			ALTER TABLE suppliers 
+			ADD UNIQUE (email);
+
+			ALTER TABLE suppliers 
+			ADD UNIQUE (email,phone);
+
+			ALTER TABLE suppliers 
+			ADD CONSTRAINT uc_email_phone UNIQUE (email,phone);
+
+			CREATE TABLE IF NOT EXISTS suppliers(
+				id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+				firstname VARCHAR(50) NOT NULL,
+				lastname VARCHAR(50) NOT NULL,
+				email VARCHAR(100) NOT NULL,
+				phone VARCHAR(100) NOT NULL,
+				password VARCHAR(255) NOT NULL
+			);
+
+			DESC suppliers;
+			SHOW INDEX FROM suppliers;
+
+			INSERT INTO suppliers(firstname,lastname,email,phone,password) 
+			VALUES ('aung','aung','aungaung@gmail.com','0911111','123456'),
+					('aung','kyaw','aungkyaw@gmail.com','0922222','123456'),
+					('thura','kyaw','thuraaung@gmail.com','0933333','123456');
+
+			SHOW INDEX FROM suppliers;
+
+			INSERT INTO suppliers(firstname,lastname,email,phone,password) 
+			VALUES ('kyaw','kyaw','aungaung@gmail.com','0944444','123456');
+
+			*ERROR
+			INSERT INTO suppliers(firstname,lastname,email,phone,password) 
+			VALUES ('kyaw','kyaw','AungAung@gmail.com','0944444','123456');
+
+			INSERT INTO suppliers(firstname,lastname,email,phone,password) 
+			VALUES ('kyaw','kyaw','AungAung@gmail.com','0955555','123456');
+
+			*ERROR 
+			INSERT INTO suppliers(firstname,lastname,email,phone,password) 
+			VALUES ('maung','maung','aungkyaw@gmail.com','0922222','123456');
+
+
+	=> DROP UNIQUE KEY 
+
+		DESC suppliers;
+		SHOW INDEX FROM suppliers;
+		SELECT * FROM suppliers;
+
+		ALTER TABLE suppliers DROP INDEX uc_email_phone;
+
+		DESC suppliers;
+		SHOW INDEX FROM suppliers;
+		SELECT * FROM suppliers;
