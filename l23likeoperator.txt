@@ -15,7 +15,7 @@
 		WHERE column LIKE '_r%'		    Find any values that have 'r' in the second position
 		( r နဲ. စရမယ်  စာလုံး ဒုတိယနေရာမှာ ရှိရမယ် ) 
 		WHERE column LIKE 'r_%'		    Find any values that have 'r' and least 2 characters in length
-		( a နဲ. စရမယ် အနည်းဆုံး စာလုံး ၂ လုံးရှိရမယ် )
+		( r နဲ. စရမယ် အနည်းဆုံး စာလုံး ၂ လုံးရှိရမယ် )
 		WHERE column LIKE 'r__%'		Find any values that have 'r' and least 3 characters in length
 		( a နဲ. စရမယ် အနည်းဆုံး စာလုံး ၃ လုံးရှိရမယ် )
 		WHERE column LIKE 'a%o'			Find any values that start with 'a' and ending with 'o'
@@ -44,6 +44,7 @@
 		SELECT firstname,lastname,age,city FROM customers
 		WHERE firstname LIKE "%n";
 
+		result = no result
 		SELECT firstname,lastname,age,city FROM customers
 		WHERE firstname LIKE "%un";
 
@@ -70,7 +71,7 @@
 
 	---------------------------------------------------------------------------------------------
 
-	=> EXERCISE ( LIKE '____') 
+	=> EXERCISE ( LIKE '____') => Characher Length
 
 		SELECT firstname,lastname,age,city FROM customers 
 		WHERE firstname LIKE '____';

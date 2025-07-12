@@ -1,0 +1,41 @@
+=>GROUP BY Clause 
+	
+	=>Syntax 
+
+		SELECT column1,column2,... FROM tablename 
+		WHERE ... GROUP BY column1,column2,...;
+
+	--------------------------------------------------------------
+
+	=>GROUP BY vs DISTINCT 
+
+		SELECT DISTINCT city FROM customers;
+		SELECT city FROM customers GROUP BY city;
+
+		SELECT DISTINCT age FROM customers;
+		SELECT age FROM customers GROUP BY age;
+
+	--------------------------------------------------------------
+
+	=> GROUP BY Clause with COUNT() 
+
+		SELECT * FROM customers;
+
+		*error 
+		SELECT COUNT(*),DISTINCT city FROM customers;
+
+		SELECT COUNT(*),city FROM customers GROUP BY city;
+		SELECT city,COUNT(*) FROM customers GROUP BY city;
+
+		SELECT age,COUNT(*) FROM customers 
+		GROUP BY age
+		ORDER BY age DESC;
+
+	--------------------------------------------------------------
+
+	=> GROUP BY Clause with MIN()/MAX() 
+
+		SELECT * FROM customers;
+
+		SELECT COUNT(*),amount FROM customers GROUP BY amount;
+

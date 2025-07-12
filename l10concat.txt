@@ -41,5 +41,7 @@
 			SELECT CONCAT_WS('-',firstname,lastname) FROM suppliers;
 			SELECT CONCAT_WS('/',firstname,lastname,phone) FROM suppliers;
 
+			
+
 
 

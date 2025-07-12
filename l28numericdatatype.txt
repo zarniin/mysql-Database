@@ -1,0 +1,85 @@
+=> Numberic Data Type 
+
+    Data Type                                 Description 
+
+        BIT(size)                                 A bit-value type, from 1 to 64. default value is 1 
+                                                 (အလွန်သေးငယ်တယ် size တွေ.မှာ သုံးတယ် (eg T/F => Male (or) Female) size(1 ကနေ 64 ထိ ရှိတယ်) default value is 1)
+                                                 
+        BOOL                                      Zero is considered as false, Non-Zero values are considered as true 
+                                                  (0 ဆိုရင် false || 0 မဟုတ်တယ်ကောင်တွေ.ဆို true) 
+
+        BOOLEAN                                   Zero is considered as false, Non-Zero values are considered as true 
+                                                  (0 ဆိုရင် false || 0 မဟုတ်တယ်ကောင်တွေ.ဆို true) 
+
+        TINYINT(size)                             A very small integer -128 to 127, Signed range -128 to 127 , Unsigned range 0 to 255 (255 ကို 2 နဲ.စားရင် 128 Signed တွေ. ရတယ်)
+                                                  (tiny အရာတွေ.ကို tinyint(size) နဲ. သုံးတယ် သူမှာ Signed နဲ. Unsigned နှစ်မျိုး ရှိတယ် => Signed ဆိုရင် (-) -128 စမယ် 127 မှာဆုံးမယ် => Unsigned ဆိုရင် (+) 0 စမယ် 255 မှာဆုံးမယ်)
+                                                  
+        SMALLINT(size)                            A small integer, Signed range -32768 to 32767 , Unsigned range 0 to 65535 (6kb) (65535 ကို 2 နဲ.စားရင် 32768 Signed တွေ. ရတယ်)
+                                                  (small အရာတွေ.ကို smallint(size) နဲ. သုံးတယ် သူမှာ Signed နဲ. Unsigned နှစ်မျိုး ရှိတယ် => Signed ဆိုရင် (-) -32768 စမယ် 32767 မှာဆုံးမယ် => Unsigned ဆိုရင် (+) 0 စမယ် 65535(6kb) မှာဆုံးမယ်)
+
+        MEDIUMINT(size)                           A medium integer, Signed range -8388608 to 8388607 , Unsigned range 0 to 16777215 (16mb) (16777215 ကို 2 နဲ.စားရင် 8388607 Signed တွေ. ရတယ်)
+                                                  (medium အရာတွေ.ကို mediumint(size) နဲ. သုံးတယ် သူမှာ Signed နဲ. Unsigned နှစ်မျိုး ရှိတယ် => Signed ဆိုရင် (-) -8388608 စမယ် 8388607 မှာဆုံးမယ် => Unsigned ဆိုရင် (+) 0 စမယ် 16777215(6mb) မှာဆုံးမယ်)
+
+        INT                                       Signed range -2147483648 to 2147483647 , Unsigned range 0 to 4294967295 (4gb) (2147483647 ကို 2 နဲ.စားရင် 4294967295 Signed တွေ. ရတယ်)
+                                                  (int အရာတွေ.ကို int(size) နဲ. သုံးတယ် သူမှာ Signed နဲ. Unsigned နှစ်မျိုး ရှိတယ် => Signed ဆိုရင် (-) -2147483648 စမယ် 2147483647 မှာဆုံးမယ် => Unsigned ဆိုရင် (+) 0 စမယ် 4294967295(4gb) မှာဆုံးမယ်)
+
+        INTEGER                                   Signed range -2147483648 to 2147483647 , Unsigned range 0 to 4294967295 (4gb) (2147483647 ကို 2 နဲ.စားရင် 4294967295 Signed တွေ. ရတယ်)
+                                                  (integer အရာတွေ.ကို int(size) နဲ. သုံးတယ် သူမှာ Signed နဲ. Unsigned နှစ်မျိုး ရှိတယ် => Signed ဆိုရင် (-) -2147483648 စမယ် 2147483647 မှာဆုံးမယ် => Unsigned ဆိုရင် (+) 0 စမယ် 4294967295(4gb) မှာဆုံးမယ်)
+
+        BITINT()                                  A large Integer
+
+        DECIMAL(size,d(digit))                    fixed-point number. default value for d is 0 
+                                                  eg(999.99) is 5 digit and 2 decimal DECIMAL(5,2) 
+
+        DEC(size,d)                               fixed-point number. default value for d is 0 (200.0)
+        FLOAT(size,p)                             A ploating point number (Approximate(estiable) ခန်.မှန်.ခြေ Value)
+        FLOAT(p)                                  A ploating point number (Approximate Value). p is optional. p is from 0 to 24 (0 ကနေ 24 ဒသမကိန်း ပေးလို.ရမယ်)
+        DOUBLE(size,p)                            A ploating point number (Approximate Value). p is optional. p is form 25 to 53 ( FLOAT ထပ်များချင်ရင် DOUBLE ဒသမကိန်းကို သုံးပါ DOUBLE 25 ကနေ 53 ထိ အများဆုံး ပေးလို. ရတယ်)
+
+        Note : : DECIMAL for finance (such as money) 
+                 FLOAT & DOUBLE for science app
+
+        --------------------------------------------------------------------------------------------------------------------------------------
+
+        => Exercise 
+
+            CREATE TABLE IF NOT EXISTS items(
+                name VARCHAR(20),
+                price INT,
+                status BOOL 
+            );
+
+            DESC items;
+
+            INSERT INTO items(name,price)
+            VALUES ('water',100),
+                   ('coffee',500),
+                   ('cake',500),
+                   ('snack',250.56),
+                   ('jam',1000);
+
+            SELECT * FROM items;
+
+            INSERT INTO items(name,price,status)
+            VALUES ('water',100,0),
+                   ('coffee',500,1),
+                   ('cake',500,0),
+                   ('snack',250.56,1),
+                   ('jam',1000,0);
+                   
+            SELECT * FROM items;
+
+            CREATE TABLE IF NOT EXISTS proitems(
+                name VARCHAR(20),
+                purchaseprice INT(4) SIGNED, 
+                sellprice INT(4) UNSIGNED,
+                status BOOL 
+            );
+
+            DESC proitems;
+
+        
+
+
+
+

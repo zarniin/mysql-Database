@@ -55,6 +55,7 @@
 				lastname VARCHAR(255) NOT NULL,
 				gender VARCHAR(255) DEFAULT 'male',
 				age INT NOT NULL
+				PRIMARY KEY(id)
 			);
 
 			DESC enginners;

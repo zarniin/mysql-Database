@@ -1,0 +1,14 @@
+=> Date Data Type 
+
+    Data Type                               Description 
+
+        DATE                                    A date, Format : YYYY-MM-DD . The supported range is from '1000-01-01' to '9999-01-31                            
+        DATETIME                                A date and time combination. Format YYY-MM-DD hh:mm:ss. The supported range is from '1000-01-01 00:00:00 ' to '9999-01-31 29:59:59'
+        TIMESTAMP                               A timestamp. Format YYYY-MM-DD hh:mm:ss 
+        TIME                                    A time: Format hh:mm:ss
+        YEAR                                    A year with four-digit format 
+
+    ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    => Exercise 
+

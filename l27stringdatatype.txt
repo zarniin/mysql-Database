@@ -1,0 +1,115 @@
+=> String Data Types 
+	
+	Data Type 											Description
+		CHAR(size) 											A fixed Length String. (can contain letters,numbers,special characters). 0 to 255 
+		VARCHAR(size)										A Variable Length String. (can contain letters,numbers,special characters). 0 to 255
+		TEXT												Hold a string with maximum size 68,xxx (6kb) 
+		TINYTEXT 											Hold a string with maximum size 255 (255 bytes) 
+		MEDIUMTEXT 											Hold a string with maximum size 255 16,xxx,xxx (16mb) 
+		LONGTTEXT											Hold a string with maximum size 255 4,xxx,xxx(4gb)
+
+		BINARY(size) 										Equal to CHAR(size) , but store by binary byte string 
+		VARCHAR(size)										Equal to VARCHAR(size) , but store by binary byte string 
+		BIOB()												For BLOB(Binary Large Objects) . maximum size 68,xxx (6kb)
+		TINYBIOB() 											For BLOB(Binary Large Objects) . maximum size 255 (255 bytes) 
+		MEDIUMBLOB()										For BLOB(Binary Large Objects) . maximum size 255 16,xxx,xxx (16mb)
+		LONGTBLOB()											For BLOB(Binary Large Objects) . maximum size 4,xxx,xxx,xxx(4gb) 
+
+		('val1','val2','val3',...)    						A string object that can have only one value, choose from a list of possible value.
+		('val1','val2','val3',...)							A string object that can have 1 or more value, choose from a list of possible value.
+
+	=>CHAR 
+		A fixed Length String. 
+		eg. telephone numbers, zip code , Yes/No Y/N , Male/Female M/F 
+
+	-------------------------------------------------------------------------
+
+	=>EXERCISE 
+
+		Exercise 1 
+			CREATE TABLE IF NOT EXISTS contacts(
+				name CHAR(5),
+				city VARCHAR(10)
+			);
+
+			DESC contacts;
+
+			2020 => *error 2025 => *oki 
+			INSERT INTO contacts(name,city)
+			VALUE ('aung aung','mandalay');
+
+			2020 => *error 2025 => *oki 
+			INSERT INTO contacts(name,city)
+			VALUE ('aung aung','mandalaycity');
+
+			*OKI 
+			INSERT INTO contacts(name,city)
+			VALUE ('aung','mandalay');
+
+		Exercise 2
+		
+			2020 => *oki 2025 => *error 
+			CREATE TABLE IF NOT EXISTS myjobs(
+				id INT,
+				content VARCHAR(10) DEFAULT "nothing to show"
+			);
+
+			*oki 
+			CREATE TABLE IF NOT EXISTS myjobs(
+				id INT,
+				content VARCHAR(10) DEFAULT "nothing"
+			);
+
+			DESC myjobs;
+
+			*oki
+			INSERT INTO myjobs(id,content)
+			VALUE (1,'hello');
+
+			*error
+			INSERT INTO myjobs(id,content)
+			VALUE ('hi');
+
+			*oki 
+			INSERT INTO myjobs(id,content)
+			VALUE (3,'hidden to show');
+
+		Exercise 3 
+
+			CREATE TABLE IF NOT EXISTS myworks(
+				id INT DEFAULT 10,
+				content VARCHAR(255) DEFAULT "nothing to show",
+				message TEXT 
+			);
+
+			DESC myworks;
+
+			*oki 
+			INSERT INTO myworks(id,content,message)
+			VALUE (1,"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+
+			*oki 
+			INSERT INTO myworks(message)
+			VALUE ("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+
+		Exercise 4 
+
+			2025 => *oki 
+			CREATE TABLE IF NOT EXISTS mytasks(
+				id INT DEFAULT 10,
+				content VARCHAR(255) DEFAULT "nothing to show",
+				message TEXT DEFAULT "have a good day" 
+			);
+
+			DESC mytasks;
+
+			2020 => error (BLOB,TEXT,GEOMETRY or JSON column can't have a default value)
+			CREATE TABLE IF NOT EXISTS mytasks(
+				id INT DEFAULT 10,
+				content VARCHAR(255) DEFAULT "nothing to show",
+				message TEXT DEFAULT "have a good day" 
+			);
+
+			DESC mytasks;
+
+	 

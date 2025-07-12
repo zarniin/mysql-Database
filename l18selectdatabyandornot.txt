@@ -26,25 +26,25 @@
 		);
 
 		INSERT INTO customers
-		VALUES (1,'aung','aung',20,'male',20000.00,'mandalay','myanmar');
+		VALUES (1,'aung','aung',20,'male',200000.00,'mandalay','myanmar');
 
 		INSERT INTO customers
 		VALUES 	(2,'aung','kyaw',30,'male',150000.00,'yangon','myanmar'),
 				(3,'min','min',18,'male',50000.00,'bago','myanmar'),
-				(4,'thura','kyaw',32,'male',90000.00,'mamlamyine','myanmar'),
+				(4,'thura','kyaw',32,'male',90000.00,'mawlamyine','myanmar'),
 				(5,'thura','zaw',16,'male',17000.00,'yangon','myanmar'),
 				(6,'zayar','aung',50,'male',300000.00,'bangkok','thailand');
 
 		INSERT INTO customers
 		VALUES 	(7,'zue','zue',50,'female',310000.00,'chinmaing','thailand'),
 				(8,'zaw','zaw',25,'male',800000.00,'yanaung','thailand'),
-				(9,'linn','linn',17,'male',500000.00,'mamlamyine','thailand'),
+				(9,'linn','linn',17,'male',500000.00,'mawlamyine','thailand'),
 				(10,'hla','hla',20,'female',200000.00,'mandalay','myanmar'),
 				(11,'su','su',30,'female',150000.00,'yangon','myanmar');
 
 		INSERT INTO customers
-		VALUES 	(12,'yu','yu',18,'female',50000.00,'bango','myanmar'),
-				(13,'mya','mya',32,'female',90000.00,'mamlamyine','myanmar'),
+		VALUES 	(12,'yu','yu',18,'female',50000.00,'bago','myanmar'),
+				(13,'mya','mya',32,'female',90000.00,'mawlamyine','myanmar'),
 				(14,'aye','aye',16,'female',170000.00,'yangon','myanmar'),
 				(15,'nway','nway',50,'female',300000.00,'bangkok','thailand'),
 				(16,'thzar','aung',50,'female',310000.00,'chinmaing','thailand'),

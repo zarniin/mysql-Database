@@ -39,7 +39,7 @@
 	=> REPLACE() with SUBSTRING() and CONCAT() 
 
 		Exercise
-			SELECT SUBSTING(REPLACE(address,'n','N'),1,5) FROM persons;
+			SELECT SUBSTRING(REPLACE(address,'n','N'),1,5) FROM persons;
 
 			SELECT SUBSTRING(
 			REPLACE(address,'n','N'),1,5) 
@@ -58,3 +58,5 @@
 			FROM persons;
 
 	------------------------------------------------------------
+
+	

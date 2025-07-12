@@ -4,7 +4,7 @@
 		SELECT COUNT(column) FROM tablename
 		WHERE condition;
 
-	=>Syntax = SUM()
+	=>Syntax = AVG()
 		SELECT AVG(column) FROM tablename
 		WHERE condition;
 
@@ -14,6 +14,10 @@
 
 	=>Syntax = MIN()
 		SELECT MIN(column) FROM tablename
+		WHERE condition;
+
+	=>Syntax = MAX()
+		SELECT MAX(column) FROM tablename
 		WHERE condition;
 
 	---------------------------------------------------------------
