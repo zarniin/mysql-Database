@@ -15,8 +15,8 @@
 		MEDIUMBLOB()										For BLOB(Binary Large Objects) . maximum size 255 16,xxx,xxx (16mb)
 		LONGTBLOB()											For BLOB(Binary Large Objects) . maximum size 4,xxx,xxx,xxx(4gb) 
 
-		('val1','val2','val3',...)    						A string object that can have only one value, choose from a list of possible value.
-		('val1','val2','val3',...)							A string object that can have 1 or more value, choose from a list of possible value.
+		ENUM('val1','val2','val3',...)    						A string object that can have only one value, choose from a list of possible value.
+		SET('val1','val2','val3',...)							A string object that can have 1 or more value, choose from a list of possible value.
 
 	=>CHAR 
 		A fixed Length String. 
